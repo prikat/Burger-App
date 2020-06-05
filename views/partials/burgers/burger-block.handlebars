@@ -1,0 +1,10 @@
+{{!-- listed burgers will be list items --}}
+<li class="list-group-item fontsize">
+    {{!-- list name of burger --}}
+    {{burger_name}}
+    {{!-- button that, if clicked, will change devour state --}}
+    <button class = "change-devoured float-right" data-id="{{id}}" data-newdevour="{{devoured}}">
+        {{!-- if burger has state of devoured, button shows "Regurgitate?", otherwise button shows "Devour it!" --}}
+        {{#if devoured}}Regurgitate? :/{{else}} Devour it! {{/if}}
+    </button>
+</li>

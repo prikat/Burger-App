@@ -1,0 +1,61 @@
+<body id="backgroundcolor">
+
+<div class="container-fluid">
+    <h1 class = "center">The Burger-Logger!</h1><hr>
+    <div class="row">
+        <div class = "col-md-5">
+        </div>
+            <div class ="col-md-2">
+                <h2 class = "center">Create a Burger</h2><br>
+                {{!-- create burger form --}}
+                    <form class = "create-form">
+                        <div class = "form-group textareasize">
+                            <input type = "text" id = "burger" size = "26" name = "burgername">
+                        </div>
+                        <div>
+                            {{!-- user can select if burger they want to add is devoured or uneaten --}}
+                            <label for="devo">Devoured?</label><br>
+                            <input type="radio" name = "devoured" value="1">Devoured!<br>
+                            <input type="radio" name = "devoured" value="0">Uneaten
+                        </div>
+                        {{!-- submit button for user to add burger to database --}}
+                        <button type = "submit">Submit Burger</button>
+                    </form>
+            </div>
+        <div class ="col-sm-5">
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 float-left">
+            <h2 class = "center">Burgers ready to be devoured</h2><br>
+            {{!-- loops through burgers object --}}
+            <ol class="list-group">
+                {{#each burgers}}
+                {{!-- if row property is not devoured, then list it --}}
+                    {{#unless devoured}}
+                    {{!-- render li elements using partial where devour is false--}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+        <div class="col-md-6 float-left">
+            <h2 class = "center">Burgers that have been devoured</h2><br>
+            {{!-- Loops through burgers object --}}
+            <ol class="list-group">
+                {{!-- if row property is devoured, then list it --}}
+                {{#each burgers}}
+                    {{#if devoured}}
+                    {{!-- reander li elements usings partial where devoured is true --}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>
+
+</body>
