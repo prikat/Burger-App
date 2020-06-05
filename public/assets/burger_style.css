@@ -1,0 +1,16 @@
+#backgroundcolor {
+    background-color: lightblue;
+}
+
+.center {
+    text-align: center;
+}
+
+.textareasize {
+    width: 100px;
+    height: 50px;
+}
+
+.fontsize {
+    font-size: 15px;
+}
