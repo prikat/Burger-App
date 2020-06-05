@@ -31,9 +31,8 @@ If you have any questions about the repo, open an issue or contact [prikat] dire
 
 ## Links
 
-Link to Github repo: (https://github.com/abazrafshan/BurgerLogger)
+Link to Github repo: (https://github.com/prikat/Burger-App)
 
-## Screenshot
 
 
 
